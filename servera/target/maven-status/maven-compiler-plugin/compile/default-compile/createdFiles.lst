@@ -1,0 +1,7 @@
+com/seaway/springcloud/domo/servera/ServeraConstant.class
+com/seaway/springcloud/domo/servera/TestRestController.class
+com/seaway/springcloud/domo/servera/SpringcloudDomoServeraApplication.class
+com/seaway/springcloud/domo/servera/MyHealthChecker.class
+com/seaway/springcloud/domo/servera/ITbSpDomainsDAO.class
+com/seaway/springcloud/domo/servera/CustomHealthIndicator.class
+com/seaway/springcloud/domo/servera/SpDomains.class

@@ -1,0 +1,4 @@
+/Users/panjunle/ideaserver/spring-cloud/zuul/src/main/java/com/seaway/springcloud/demo/zuul/SpringcloudDemoZuulApplication.java
+/Users/panjunle/ideaserver/spring-cloud/zuul/src/main/java/com/seaway/springcloud/demo/zuul/MyPostZuulFilter.java
+/Users/panjunle/ideaserver/spring-cloud/zuul/src/main/java/com/seaway/springcloud/demo/zuul/MyPreZuulHeader.java
+/Users/panjunle/ideaserver/spring-cloud/zuul/src/main/java/com/seaway/springcloud/demo/zuul/CommonFallback.java

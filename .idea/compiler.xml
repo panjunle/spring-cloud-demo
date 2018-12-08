@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1500" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hystrix-dashboard" />
+        <module name="spring-cloud-demo-eureka" />
+        <module name="springcloud-demo-client" />
+        <module name="springcloud-demo-config-server" />
+        <module name="springcloud-demo-servera" />
+        <module name="springcloud-demo-zuul" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hystrix-dashboard" options="-parameters" />
+      <module name="spring-cloud-demo-eureka" options="-parameters" />
+      <module name="springcloud-demo-client" options="-parameters" />
+      <module name="springcloud-demo-config-server" options="-parameters" />
+      <module name="springcloud-demo-servera" options="-parameters" />
+      <module name="springcloud-demo-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>
