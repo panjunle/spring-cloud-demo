@@ -1,6 +1,4 @@
 *.iml
-.DS_Store/*
-target/*
-.idea/*
-**/*.swp
-*.swp
+.DS_Store
+target
+.idea

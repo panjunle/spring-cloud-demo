@@ -1,5 +1,0 @@
-com/seaway/springcloud/demo/zuul/SpringcloudDemoZuulApplication.class
-com/seaway/springcloud/demo/zuul/MyPreZuulHeader.class
-com/seaway/springcloud/demo/zuul/MyPostZuulFilter.class
-com/seaway/springcloud/demo/zuul/CommonFallback$1.class
-com/seaway/springcloud/demo/zuul/CommonFallback.class
