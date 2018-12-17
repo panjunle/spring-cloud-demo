@@ -9,10 +9,8 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring-cloud-demo-eureka</artifactId>
+    <artifactId>eureka</artifactId>
    
-    <name>spring-cloud-demo-eureka</name>
- 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

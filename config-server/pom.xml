@@ -9,9 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-demo-config-server</artifactId>
-
-    <name>springcloud-demo-config-server</name>
+    <artifactId>config-server</artifactId>
 
     <dependencies>
         <dependency>

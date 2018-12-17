@@ -8,8 +8,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-demo-servera</artifactId>
-    <name>springcloud-domo-servera</name>
+    <artifactId>servera</artifactId>
 
     <dependencies>
         <dependency>

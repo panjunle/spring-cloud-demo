@@ -17,11 +17,12 @@
     <name>springcloud-demo</name>
 
     <modules>
-        <module>erueka</module>
+        <module>eureka</module>
         <module>servera</module>
         <module>client</module>
         <module>zuul</module>
-        <module>springcloud-demo-config-server</module>
+        <module>config-server</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
     <properties>

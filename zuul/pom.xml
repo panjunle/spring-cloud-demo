@@ -9,8 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-demo-zuul</artifactId>
-    <name>springcloud-demo-zuul</name>
+    <artifactId>zuul</artifactId>
 
     <dependencies>
         <dependency>
