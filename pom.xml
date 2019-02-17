@@ -23,13 +23,15 @@
         <module>zuul</module>
         <module>config-server</module>
         <module>hystrix-dashboard</module>
+        <module>gateway</module>
+        <module>boot-admin-server</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.M3</spring-cloud.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -43,6 +45,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -59,7 +69,7 @@
                         <image>
                             <name>${project.artifactId}</name>
                             <build>
-                                <from>java:8u111-jre-alpine</from>
+                                <from>java:8-jre-alpine</from>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
@@ -73,16 +83,6 @@
     </build>
 
     <repositories>
-        <repository>
-            <id>swpublic</id>
-            <url>http://192.168.32.22:8081/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>

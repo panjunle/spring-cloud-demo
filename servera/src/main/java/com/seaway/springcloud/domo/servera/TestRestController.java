@@ -1,5 +1,7 @@
 package com.seaway.springcloud.domo.servera;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,11 +17,13 @@ public class TestRestController {
 
 //    @Autowired
 //    private ITbSpDomainsDAO domainsDAO;
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestRestController.class);
 
     @RequestMapping(value = "/getTest", method = RequestMethod.GET)
     public Object getTest(HttpServletRequest request) {
-        System.out.println("收到get test 请求");
+        LOGGER.info("收到get test 请求");
         Map<String, String[]> parameterMap = request.getParameterMap();
+        LOGGER.info("请求参数:{}",parameterMap);
         return parameterMap;
     }
 
@@ -46,6 +50,7 @@ public class TestRestController {
     @GetMapping("/ip")
     public String getIp() {
         try {
+            LOGGER.info("查询本机ip");
             InetAddress localHost = InetAddress.getLocalHost();
             return "ip:" + localHost.getHostAddress();
         } catch (UnknownHostException e) {
