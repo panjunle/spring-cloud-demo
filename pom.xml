@@ -25,6 +25,8 @@
         <module>hystrix-dashboard</module>
         <module>gateway</module>
         <module>boot-admin-server</module>
+        <module>testcommon</module>
+        <module>txlcn-manager</module>
     </modules>
 
     <properties>
@@ -46,13 +48,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -73,7 +68,7 @@
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
-                                <entryPoint>java -jar /maven/${project.build.finalName}.jar</entryPoint>
+                                <entryPoint>exec java -jar /maven/${project.build.finalName}.jar</entryPoint>
                             </build>
                         </image>
                     </images>
@@ -82,16 +77,16 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>spring-milestones</id>-->
+<!--            <name>Spring Milestones</name>-->
+<!--            <url>https://repo.spring.io/milestone</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
 
 </project>

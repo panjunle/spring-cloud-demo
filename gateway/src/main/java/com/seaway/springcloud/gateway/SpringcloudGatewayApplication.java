@@ -26,10 +26,6 @@ public class SpringcloudGatewayApplication {
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.host("**.changeuri.org").and().header("X-Next-Url")
-                        .uri("http://blueskykong.com"))
-                .route(r -> r.host("**.changeuri.org").and().query("url")
-                        .uri("http://blueskykong.com"))
                 .route(r -> r.path("/getTest").filters(f -> {
                     f.requestRateLimiter(config -> {
                         config.setStatusCode(HttpStatus.TOO_MANY_REQUESTS);

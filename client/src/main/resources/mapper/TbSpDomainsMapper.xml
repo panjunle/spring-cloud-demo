@@ -3,9 +3,9 @@
         PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         "http://mybatis.apache.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.seaway.springcloud.domo.dao.ITbSpDomainsDAO">
+<mapper namespace="com.seaway.springcloud.demo.dao.ITbSpDomainsDAO">
 
-    <resultMap id="TbSpDomainsResult" type="com.seaway.springcloud.domo.servera.SpDomains">
+    <resultMap id="TbSpDomainsResult" type="com.seaway.springcloud.demo.SpDomains">
     </resultMap>
 
     <!-- 用于select查询公用抽取的列 -->
@@ -24,6 +24,35 @@
         ]]>
     </sql>
 
+    <insert id="insert" parameterType="com.seaway.springcloud.demo.SpDomains">
+        <![CDATA[
+        INSERT INTO
+        TB_SP_DOMAINS (
+            DOMAIN_ID ,
+            DOMAIN_NAME ,
+            DOMAIN_CONTACTS ,
+            DOMAIN_TEL ,
+            DOMAIN_IPS ,
+            DOMAIN_STS ,
+            CALLBACK_URL ,
+            CREATE_TIME ,
+            MODIFY_TIME ,
+            DOMAIN_DESC
+        ) VALUES (
+            #{domainId,jdbcType=DECIMAL} ,
+            #{domainName,jdbcType=VARCHAR} ,
+            #{domainContacts,jdbcType=VARCHAR} ,
+            #{domainTel,jdbcType=VARCHAR} ,
+            #{domainIps,jdbcType=VARCHAR} ,
+            #{domainSts,jdbcType=DECIMAL} ,
+            #{callbackUrl,jdbcType=VARCHAR} ,
+            #{createTime,jdbcType=TIMESTAMP} ,
+            #{modifyTime,jdbcType=TIMESTAMP} ,
+            #{domainDesc,jdbcType=VARCHAR}
+        )
+    ]]>
+    </insert>
+
     <select id="getById" parameterType="Long" resultMap="TbSpDomainsResult">
         select
         <include refid="tbSpDomainsColumns"/>
@@ -34,7 +63,7 @@
         ]]>
     </select>
 
-    <update id="update" parameterType="com.seaway.springcloud.domo.servera.SpDomains">
+    <update id="update" parameterType="com.seaway.springcloud.demo.SpDomains">
         <![CDATA[
         UPDATE TB_SP_DOMAINS SET
             DOMAIN_NAME = #{domainName,jdbcType=VARCHAR} ,

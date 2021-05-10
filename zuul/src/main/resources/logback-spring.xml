@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <contextName>logback</contextName>
+
+    <springProperty scope="context" name="appName" source="spring.application.name" />
+    <springProperty scope="context" name="appIp" source="spring.cloud.client.ip-address" />
+
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>127.0.0.1:5000</destination>
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+            <!--只添加traceId和spanId，忽略其它mdc，减少不必要信息-->
+            <includeMdcKeyName>traceId</includeMdcKeyName>
+            <includeMdcKeyName>spanId</includeMdcKeyName>
+            <!--排除context内容，如：hostname-->
+            <includeContext>false</includeContext>
+            <!--添加自定义内容-->
+            <!--添加appName和appIp，用于分布式环境区分不同的微服务实例-->
+            <customFields>{"appName":"${appName}", "appIp":"${appIp}"}</customFields>
+        </encoder>
+    </appender>
+
+
+    <!--输出到控制台-->
+    <!--<appender name="console" class="ch.qos.logback.core.ConsoleAppender">-->
+    <!--</appender>-->
+
+    <root level="info">
+        <appender-ref ref="stash"/>
+        <!--<appender-ref ref="console" />-->
+    </root>
+
+</configuration>
